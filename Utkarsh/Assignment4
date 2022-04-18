@@ -1,0 +1,185 @@
+                      # Assignment 4 #
+                    # Topic Functions #
+
+Q1. XYZ Technologies is in the process of increment the salary of the employees. This
+increment is done based on their salary and their performance appraisal rating.
+a. If the appraisal rating is between 1 and 4, the increment is 10% of the salary.
+b. If the appraisal rating is between 4.1 and 7, the increment
+is 25% of the salary.
+c. If the appraisal rating is between 7.1 and 10, the increment
+is 30% of the salary.
+Help them to do this, by writing a program that displays the
+incremented salary
+
+package new_packages;
+import java.util.Scanner;
+
+public class Utkarsh_a4_q1 {
+	
+	static int cal_inc(int salary, float rating) {
+		int inc = 0;
+		int inc_salary = 0;
+		if(rating>=1||rating<=4) {
+			inc=10;
+			
+		}
+		else if(rating>=4.1||rating<=7) {
+			inc=25;
+			
+		}
+		else {
+			inc=30;
+			
+		}
+	    inc_salary =salary+(salary*inc/100);
+		return inc_salary ;
+		
+	}
+
+	public static void main(String[] args) {
+		Scanner s=new Scanner(System.in);
+		System.out.println("Enter the salary: ");
+		int salary=s.nextInt();
+		System.out.println("Enter the Performance appraisal rating: ");
+		float rating= s.nextFloat();
+		if(rating<1 || rating>10 || salary<0) {
+			System.out.println("Invalid Input");
+		}else {
+			System.out.println(cal_inc(salary,rating));
+		
+		
+
+	}
+	}
+}
+______________________________________________________________________________________________________________________________________________________________________
+
+Q2. XYZ college wants to recognize the department which has succeeded in getting the
+maximum number of placements for this academic year. The departments that have
+participated in the recruitment drive are CS, EC, ME. Help the college to find the
+department getting maximum placements. Check for all the possible output given in the
+sample snapshot
+
+package new_packages;
+import java.util.Scanner;
+
+public class Utkarsh_a4_q2 {
+	
+	static int placed_student(int cs, int ec, int me) {
+		if(cs>ec && cs>me) {
+			System.out.println("Highest placement in cs");
+		}
+		else if(cs<ec && ec>me) {
+			System.out.println("Highest placement in ec");
+		}
+		else if(me>ec && cs<me) {
+			System.out.println("Highest placement in me");
+		}
+		else if(cs==ec && ec>me) {
+			System.out.println("Highest placement in cs and ec");
+		}
+		else if(cs>ec && cs==me) {
+			System.out.println("Highest placement in cs and me");
+		}
+		else if(me==ec && cs<me) {
+			System.out.println("Highest placement in ec and me");
+		}
+		else {
+			System.out.println("None of the department has got the highest placement");
+		}
+		return 0;
+		
+	}
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.print("Enter the number of students placed in CS: ");
+		int cs=sc.nextInt();
+		System.out.print("Enter the number of students placed in EC: ");
+		int ec=sc.nextInt();
+		System.out.print("Enter the number of students placed in ME: ");
+		int me=sc.nextInt();
+		if(cs>=0 && ec>=0 && me>=0) {
+			placed_student(cs,ec,me);
+		}
+		else {
+			System.out.println("Invalid Input ");
+		}
+
+	}
+
+}
+
+______________________________________________________________________________________________________________________________________________________________________
+
+Q3. To speed up his composition of generating unpredictable rhythms, Aniruth
+wants the list of prime numbers available in a range of numbers. Can you help
+him out? Write a java program to print all prime numbers in the interval [x,y] (x
+and y, both inclusive).
+(Use separate function to print all prime numbers in the given interval) 
+
+package new_packages;
+import java.util.Scanner;
+
+public class Utkarsh_a4_q3 {
+	static void prime(int low, int high) {
+		if(low>=high) {
+			System.out.println("Provide valid input");
+		}
+		else {
+			if(low==1) {low++;}
+			for(int i=low;i<=high;i++) {
+				int count=0;
+				for(int j=2;j<=i/2;j++) {
+					if(i%j==0) {count++;}
+				}
+				if(count==0) {System.out.print(i+" ");}
+			}
+		}
+	}
+
+	public static void main(String[] args) {
+		Scanner ob=new Scanner(System.in);
+		System.out.println("Enter the low :");
+		int low=ob.nextInt();
+		System.out.println("Enter the high :");
+		int high=ob.nextInt();
+		prime(low,high);
+
+	}
+
+}
+____________________________________________________________________________________________________________________________________________________________________
+Q4. Write a java program to find the sums of the running odd numbers and even
+numbers from a given lowerbound to an upperbound. Also compute their absolute
+difference.
+
+package new_packages;
+import java.util.Scanner;
+
+public class Utkarsh_a4_q4 {
+	
+	    static void sum(int x, int y) {
+	    	int even=0,odd=0,abs=0;
+			for(int i=x;i<=y;i++) {
+				if(i%2==0) {even=even+i;}
+				else {odd=odd+i;}
+			}
+			abs=Math.abs(even-odd);
+			System.out.println("The Sum of odd numbers from "+x+" to "+y+" is:"+odd);
+			System.out.println("The Sum of even numbers from "+x+" to "+y+" is:"+even);
+			System.out.println("The absolute difference between the two sums is: "+abs);
+		}
+    
+		public static void main(String[] args) 
+    {
+			Scanner s = new Scanner(System.in);
+			int x=s.nextInt();
+			int y=s.nextInt();
+			sum(x,y);
+		}
+}
+
+______________________________________________________________________________________________________________________________________________________________________
+
+
