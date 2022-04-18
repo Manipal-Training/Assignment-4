@@ -1,6 +1,6 @@
 import java.util.Scanner;
 public class Code1 {
-	static int cal_increment(int sal,float rating) {
+	static int increment(int sal,float rating) {
 		int inc=0;
 		if(rating >=1 && rating <= 4) {
 			inc=10;
@@ -23,7 +23,7 @@ public class Code1 {
 		if(rating<1 || rating>10 || sal<0) {
 			System.out.println("Invalid Input");
 		}else {
-			System.out.println(cal_increment(sal,rating));
+			System.out.println(increment(sal,rating));
 		}
 		
 	}
